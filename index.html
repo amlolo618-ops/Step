@@ -1,113 +1,398 @@
 <!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050608">
+<meta name="description" content="مدينة الأوغاد — عودة وكر الأوغاد قريباً. 39 نظام جاهز، والمدينة على وشك فتح أبوابها.">
+<meta property="og:title" content="مدينة الأوغاد | COMING SOON">
+<meta property="og:description" content="وكر الأوغاد راجع بهوية جديدة. الأنظمة جاهزة والإطلاق قريب.">
+<meta property="og:image" content="https://sbsforge.org/city-world.png">
+<title>مدينة الأوغاد | قريباً</title>
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050608;--ink:#0b0d12;--card:#0e1117;--gold:#e2bd6e;--gold2:#ffe3a3;--gold3:#9c7330;--text:#f5f1e8;--muted:#9da2ad;--line:#ffffff12;--green:#6fe0a4;--fb:#1877f2;--red:#ff4d4d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Tajawal,Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.wrap{width:min(1240px,calc(100% - 32px));margin:auto}
+::selection{background:var(--gold);color:#000}
+body:after{content:'';position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#090b0f"><meta name="description" content="مدينة الأوغاد — رحلة إعادة تشغيل وكر الأوغاد. تابع آخر الإنجازات وما يجري تطويره."><title>مدينة الأوغاد | العودة تُصنع الآن</title><link rel="icon" href="logo.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet"><style>
+/* ── preloader ── */
+#loader{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;transition:opacity .7s,visibility .7s}
+#loader.out{opacity:0;visibility:hidden}
+.ld{text-align:center}
+.ld-ring{position:relative;width:120px;height:120px;margin:auto}
+.ld-ring img{position:absolute;inset:14px;width:92px;height:92px;border-radius:50%;object-fit:cover}
+.ld-ring:before{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid transparent;border-top-color:var(--gold);border-left-color:var(--gold3);animation:spin 1s linear infinite}
+.ld p{margin:18px 0 0;color:var(--gold);font-size:13px;letter-spacing:1px}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-:root{--bg:#090b0f;--panel:#11141a;--gold:#d8b46c;--text:#f2efea;--muted:#a7a9ae;--line:#ffffff13;--green:#83bda0}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;color:var(--text);background:var(--bg);font-family:Tajawal,Arial,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}button,a{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:5px}header{height:86px;border-bottom:1px solid var(--line);background:#090b0ff0;position:relative;z-index:3}.wrap{width:min(1200px,calc(100% - 80px));margin:auto}.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;gap:12px;align-items:center;font-size:21px;font-weight:800;white-space:nowrap}.brand img{height:42px;width:42px;border-radius:12px}.brand small{display:block;font:9px Arial;letter-spacing:3px;color:var(--gold);margin-top:-3px}nav{display:flex;gap:32px;font-size:14px;color:var(--muted)}nav a{min-height:44px;display:flex;align-items:center}nav a:hover{color:var(--gold)}.status{font-size:12px;color:var(--muted);display:flex;gap:9px;align-items:center}.light{height:6px;width:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px #d8b46c66;display:inline-block}.hero-shell{position:relative;background:radial-gradient(ellipse at 10% 40%,#1d2c4625,transparent 70%);overflow:hidden}.hero{position:relative;display:grid;grid-template-columns:.85fr 1.2fr;align-items:center;gap:55px;padding:55px 0 44px}.hero-copy{position:relative;z-index:1}.overline{color:var(--gold);font-size:12px;font-weight:500;display:flex;align-items:center;gap:10px}.overline:before{content:'';height:1px;width:25px;background:var(--gold)}h1{font-size:clamp(48px,5.5vw,72px);font-weight:900;line-height:1.16;letter-spacing:-1.5px;margin:25px 0 20px}h1 span{display:block;color:var(--gold);font-size:.68em;margin-top:10px;letter-spacing:-.5px}.hero-copy p{font-size:18px;color:var(--muted);line-height:1.9;max-width:400px;margin:0}.hero-actions{display:flex;gap:12px;margin-top:30px}.primary,.secondary{min-height:48px;padding:12px 23px;display:inline-flex;align-items:center;justify-content:center;gap:22px;font-weight:700;font-size:14px;border-radius:4px}.primary{background:linear-gradient(120deg,#ebcf91,#c69b4d);color:#231b0d;box-shadow:0 5px 24px #d8b46c14}.secondary{border:1px solid #d8b46c40;color:var(--gold)}.hero-art{position:relative;margin:0;border:1px solid #d8b46c2b;border-radius:8px;overflow:hidden;background:#101827;box-shadow:0 30px 90px #0007}.hero-art img{display:block;width:100%;height:auto}.hero-art:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 70%,#06080bad)}.scene-caption{position:absolute;bottom:15px;right:20px;left:20px;z-index:1;display:flex;justify-content:space-between;font-size:11px;color:#e7d4b1}.scene-caption span:last-child{font:9px Arial;letter-spacing:2px}.hero-note{margin-top:20px;font-size:12px;color:#787c85}.statebar{display:grid;grid-template-columns:1fr 1fr 1fr;padding:25px 0;border-block:1px solid var(--line);gap:24px}.statebar>div{border-left:1px solid var(--line);padding-right:18px}.statebar>div:last-child{border:0}.statebar small{display:block;color:#838790;font-size:11px;margin-bottom:5px}.statebar strong{font-size:16px;font-weight:500}.statebar .gold{color:var(--gold)}.section{padding:72px 0}.section-header{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:30px}h2{font-size:36px;font-weight:800;line-height:1.3;letter-spacing:-.5px;margin:10px 0 0}.section-sub{color:var(--muted);font-size:15px;margin:12px 0 0;max-width:500px}.update-time{font-size:12px;color:#858a94;white-space:nowrap}.current{background:linear-gradient(110deg,#191b20,#14161b);border:1px solid #d8b46c35;border-right:3px solid var(--gold);border-radius:5px;padding:26px 28px;margin-bottom:26px;display:flex;justify-content:space-between;gap:20px;align-items:center}.current small{color:var(--gold);font-size:11px}.current h3{font-size:26px;margin:4px 0 2px}.current p{font-size:14px;color:var(--muted);margin:0}.work-label{font-size:12px;color:var(--gold);white-space:nowrap;border:1px solid #d8b46c35;background:#d8b46c08;padding:7px 13px;border-radius:3px}.tabs{display:flex;gap:24px;border-bottom:1px solid var(--line);margin-bottom:24px}.tabs button{border:0;border-bottom:2px solid transparent;background:transparent;color:var(--muted);min-height:48px;padding:10px 0;font-size:14px}.tabs button[aria-pressed=true]{color:var(--gold);border-bottom-color:var(--gold)}.tabs b{font:11px Arial;color:#81858e;margin-right:5px}.updates-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.update-card{padding:22px 24px;background:var(--panel);border:1px solid var(--line);border-radius:5px;transition:border-color .25s;display:grid;grid-template-columns:1fr auto;column-gap:15px}.update-card:hover{border-color:#d8b46c45}.update-card h3{font-size:18px;line-height:1.4;margin:0 0 8px;font-weight:700}.update-card p{grid-column:1/-1;font-size:13px;color:var(--muted);margin:0;line-height:1.8}.done-label{font-size:10px;color:var(--green);display:flex;align-items:center;gap:6px;white-space:nowrap;align-self:start}.done-label:before{content:'✓';font:12px Arial}.update-card .ongoing{color:var(--gold)}.ongoing:before{content:'◌';font-size:14px}.update-card[hidden]{display:none}.records-note{display:flex;justify-content:space-between;gap:20px;font-size:11px;color:#777e89;margin-top:19px;line-height:1.8}.city-section{border-top:1px solid var(--line);background:linear-gradient(180deg,#10131a70,transparent)}.motion{min-height:44px;font-size:12px;color:#a6a9b1;background:transparent;border:1px solid var(--line);padding:8px 14px;border-radius:4px;white-space:nowrap}.districts{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:16px}.district{margin:0;background:#11141a;border:1px solid #d8b46c20;border-radius:6px;overflow:hidden;min-width:0}.district-scene{position:relative;height:240px;background:#111a27;overflow:hidden}.district-scene svg{width:100%;height:100%;display:block;animation:sceneDrift 14s ease-in-out infinite;transform-origin:center}.district:nth-child(2) svg{animation-delay:-5s}.district:nth-child(3) svg{animation-delay:-9s}.district-scene:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#03081400 55%,#11141a);pointer-events:none}.district figcaption{padding:0 23px 23px;position:relative}.district small{font:9px Arial;letter-spacing:2px;color:var(--gold)}.district h3{font-size:22px;margin:7px 0 5px}.district p{color:var(--muted);font-size:13px;margin:0;line-height:1.8}.swipe-tip{display:none}.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;border-block:1px solid var(--line);padding:44px 0;margin-bottom:60px}.about p{font-size:17px;color:var(--muted);line-height:2;margin:0}.about strong{color:var(--text);font-weight:500}.closing{text-align:center;padding:0 0 65px}.closing .overline{justify-content:center}.closing h2{font-size:30px;margin:15px 0}.closing p{font-size:14px;color:var(--muted);margin:0;line-height:1.8}footer{border-top:1px solid var(--line);padding:24px 0;color:#7b818d;font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-inner strong{color:var(--gold);font-weight:500}.mobile-nav{display:none}@keyframes sceneDrift{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}.motion-paused *, .motion-paused *:before,.motion-paused *:after{animation-play-state:paused!important}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+/* ── header ── */
+header{position:fixed;top:0;inset-inline:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.solid{background:#050608cc;backdrop-filter:blur(16px);border-color:var(--line)}
+.bar{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:19px;white-space:nowrap}
+.brand img{width:42px;height:42px;border-radius:12px;object-fit:cover;box-shadow:0 0 0 1px #e2bd6e55,0 0 24px #e2bd6e33}
+.brand small{display:block;font:700 9px Cinzel,serif;letter-spacing:4px;color:var(--gold);margin-top:-3px}
+nav.top{display:flex;gap:30px;font-size:14px;color:#c9ccd3}
+nav.top a{position:relative;padding:6px 0}
+nav.top a:after{content:'';position:absolute;bottom:0;right:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+nav.top a:hover:after{width:100%}
+.fb{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:10px 18px;border-radius:999px;background:var(--fb);color:#fff;font-weight:800;font-size:14px;white-space:nowrap;box-shadow:0 6px 24px #1877f255;transition:transform .2s,box-shadow .2s}
+.fb:hover{transform:translateY(-2px);box-shadow:0 10px 34px #1877f288}
+.fb svg{width:18px;height:18px;fill:currentColor}
 
-@media(max-width:900px){.wrap{width:calc(100% - 44px)}.hero{gap:28px}h1{font-size:49px}.hero-actions{flex-direction:column}.hero-copy p{font-size:16px}.district-scene{height:210px}.about{gap:35px}.status{display:none}}
+/* ── hero ── */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;overflow:hidden;isolation:isolate;padding:110px 0 70px}
+.hero-bg{position:absolute;inset:-40px;z-index:-3;transition:transform .2s ease-out}
+.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s;filter:saturate(1.15) contrast(1.05)}
+.hero-bg img.on{opacity:1;animation:kb 14s ease-out forwards}
+@keyframes kb{from{transform:scale(1.15)}to{transform:scale(1)}}
+.hero:before{content:'';position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse 70% 60% at 50% 45%,#05060855,#050608dd 70%,#050608),linear-gradient(180deg,#05060899 0,transparent 25%,transparent 60%,var(--bg))}
+#embers{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.giant{position:absolute;inset-inline:0;top:50%;transform:translateY(-50%);z-index:-1;font:900 clamp(80px,19vw,300px)/1 Cinzel,serif;letter-spacing:.04em;color:transparent;-webkit-text-stroke:1px #e2bd6e1f;white-space:nowrap;direction:ltr;pointer-events:none;user-select:none}
+.hero-logo{width:120px;height:120px;border-radius:30px;object-fit:cover;box-shadow:0 0 0 1px #e2bd6e66,0 0 80px #e2bd6e44,0 30px 60px #000;animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.chip{display:inline-flex;align-items:center;gap:10px;margin-top:28px;padding:8px 18px;border-radius:999px;border:1px solid #e2bd6e55;background:#e2bd6e10;backdrop-filter:blur(6px);color:var(--gold2);font:700 12px Cinzel,serif;letter-spacing:5px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 #ff4d4d88;animation:live 1.6s infinite}
+@keyframes live{70%{box-shadow:0 0 0 10px #ff4d4d00}100%{box-shadow:0 0 0 0 #ff4d4d00}}
+h1{margin:20px 0 0;font-size:clamp(54px,10vw,132px);font-weight:900;line-height:1;letter-spacing:-2px;text-shadow:0 10px 60px #000}
+.shine{background:linear-gradient(100deg,var(--gold3) 0%,var(--gold2) 20%,var(--gold) 35%,#fff7df 50%,var(--gold) 65%,var(--gold3) 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-250% 0}}
+.cs{display:block;margin-top:18px;font:900 clamp(24px,4vw,46px)/1 Cinzel,serif;letter-spacing:.35em;direction:ltr;position:relative;color:#fff}
+.cs:before,.cs:after{content:attr(data-t);position:absolute;inset:0;opacity:.8}
+.cs:before{color:#ff3b6b;animation:gl1 3.2s infinite steps(1)}
+.cs:after{color:#3bd5ff;animation:gl2 3.2s infinite steps(1)}
+@keyframes gl1{0%,92%,100%{transform:none;clip-path:inset(0 0 100% 0)}93%{transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}95%{transform:translate(3px,-1px);clip-path:inset(60% 0 10% 0)}97%{transform:translate(-2px,0);clip-path:inset(30% 0 40% 0)}}
+@keyframes gl2{0%,92%,100%{transform:none;clip-path:inset(0 0 100% 0)}93%{transform:translate(4px,-1px);clip-path:inset(50% 0 20% 0)}95%{transform:translate(-3px,1px);clip-path:inset(5% 0 70% 0)}97%{transform:translate(2px,0);clip-path:inset(70% 0 5% 0)}}
+.lead{max-width:620px;margin:26px auto 0;color:#d2d5dc;font-size:19px;line-height:1.9}
+.actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px}
+.btn{position:relative;min-height:54px;padding:14px 30px;border-radius:999px;font-weight:900;font-size:16px;display:inline-flex;align-items:center;gap:10px;overflow:hidden;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.gold{background:linear-gradient(120deg,var(--gold2),var(--gold) 45%,var(--gold3));color:#1a1205;box-shadow:0 10px 40px #e2bd6e40}
+.btn.gold:after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,#ffffff80 50%,transparent 70%);transform:translateX(120%);animation:sweep 3.5s infinite}
+@keyframes sweep{60%,100%{transform:translateX(-120%)}}
+.btn.line{border:1px solid #e2bd6e66;color:var(--gold2);background:#05060866;backdrop-filter:blur(8px)}
+.ready{width:min(520px,100%);margin:46px auto 0;text-align:right}
+.ready-top{display:flex;justify-content:space-between;font-size:13px;color:#c9ccd3;margin-bottom:9px}
+.ready-top b{color:var(--gold2);font:900 15px Cinzel,serif;direction:ltr}
+.track{height:8px;border-radius:999px;background:#ffffff12;overflow:hidden;box-shadow:inset 0 0 0 1px #ffffff0a}
+.fill{height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--gold3),var(--gold2));box-shadow:0 0 18px var(--gold);transition:width 2.4s cubic-bezier(.2,.8,.2,1);position:relative}
+.fill:after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,#ffffff30 0 8px,transparent 8px 16px);background-size:22px 22px;animation:stripes 1s linear infinite}
+@keyframes stripes{to{background-position:-22px 0}}
+.ready small{display:block;margin-top:8px;color:var(--muted);font-size:12px}
+.scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);width:26px;height:42px;border:2px solid #ffffff40;border-radius:20px}
+.scroll-hint:after{content:'';position:absolute;top:8px;left:50%;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--gold);animation:wheel 1.8s infinite}
+@keyframes wheel{to{transform:translateY(14px);opacity:0}}
 
-@media(max-width:650px){html{scroll-padding-top:20px}body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}.wrap{width:calc(100% - 36px)}header{height:73px}.header-inner{gap:12px}.brand{font-size:18px;gap:9px}.brand img{height:37px;width:37px;border-radius:9px}.brand small{font-size:8px;letter-spacing:2px}.desktop-nav{display:none}.status{display:flex;font-size:10px;gap:6px}.hero{grid-template-columns:1fr;gap:25px;padding:32px 0 25px}.overline{font-size:11px}h1{font-size:clamp(39px,11.8vw,54px);margin:18px 0 16px}h1 span{font-size:.68em;margin-top:7px}.hero-copy p{font-size:15px;max-width:none;line-height:1.85}.hero-actions{flex-direction:row;margin-top:22px;gap:8px}.primary,.secondary{padding:12px 15px;font-size:13px;min-height:48px}.primary{flex:1}.secondary{padding-inline:16px}.hero-note{margin-top:13px;font-size:10px}.hero-art{border-radius:5px}.scene-caption{font-size:9px;right:12px;left:12px;bottom:10px}.scene-caption span:last-child{font-size:7px}.statebar{gap:5px;padding:19px 0}.statebar>div{padding-right:8px}.statebar small{font-size:9px}.statebar strong{font-size:12px;line-height:1.7;display:block}.section{padding:40px 0}.section-header{gap:14px;align-items:start;margin-bottom:22px}.section-header h2{font-size:28px}.update-time{font-size:10px;align-self:end}.section-sub{font-size:14px}.current{padding:20px 17px;gap:13px;margin-bottom:20px}.current h3{font-size:22px}.current p{font-size:12px}.work-label{font-size:10px;padding:6px 9px}.tabs{gap:0;justify-content:space-between}.tabs button{font-size:13px;padding-inline:4px;min-height:46px}.updates-grid{grid-template-columns:1fr;gap:10px}.update-card{padding:19px 17px;gap:8px 10px}.update-card h3{font-size:17px;margin-bottom:2px}.update-card p{font-size:12px}.done-label{font-size:10px}.records-note{flex-direction:column;gap:6px;font-size:10px}.city-section .section-header{flex-direction:column}.motion{min-height:44px}.districts{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:86%;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#6d562d #11141a;padding-bottom:12px}.district{scroll-snap-align:start;scroll-snap-stop:always}.district-scene{height:230px}.district figcaption{padding:0 19px 20px}.district h3{font-size:21px}.swipe-tip{display:block;color:#838a96;font-size:11px;margin:0 0 13px}.about{grid-template-columns:1fr;padding:30px 0;gap:17px;margin-bottom:37px}.about h2{font-size:26px}.about p{font-size:15px;line-height:1.95}.closing{padding-bottom:37px}.closing h2{font-size:25px}.closing p{font-size:13px}footer{padding:20px 0}.footer-inner{flex-wrap:wrap;gap:10px;font-size:10px}.mobile-nav{position:fixed;bottom:0;inset-inline:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:#0d1017f5;backdrop-filter:blur(16px);border-top:1px solid #d8b46c24;z-index:10;padding:8px 10px calc(8px + env(safe-area-inset-bottom))}.mobile-nav a{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px;min-height:44px;font-size:10px;color:#9199a5}.mobile-nav a[aria-current]{color:var(--gold)}.mobile-nav svg{height:18px;width:18px;fill:none;stroke:currentColor;stroke-width:1.5}}
+/* ── marquee ── */
+.marquee{border-block:1px solid #e2bd6e2a;background:linear-gradient(90deg,#0b0d12,#14110a,#0b0d12);overflow:hidden;padding:16px 0;direction:ltr}
+.mq{display:flex;width:max-content;animation:mq 45s linear infinite}
+.marquee:hover .mq{animation-play-state:paused}
+.mq span{display:inline-flex;align-items:center;gap:18px;padding-inline:18px;font-size:17px;font-weight:800;color:#d9d2c0;white-space:nowrap;direction:rtl}
+.mq span:after{content:'✦';color:var(--gold);font-size:13px}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-@media(max-width:350px){.wrap{width:calc(100% - 30px)}.brand{font-size:16px}.status{font-size:9px}.hero h1{font-size:39px}.tabs button{font-size:12px}.tabs b{font-size:10px}.primary,.secondary{font-size:12px;padding-inline:11px}.update-time{white-space:normal;text-align:left}.statebar strong{font-size:11px}}
+/* ── sections ── */
+section.blk{padding:110px 0}
+.kicker{display:inline-flex;align-items:center;gap:12px;color:var(--gold);font-weight:800;font-size:13px;letter-spacing:1px}
+.kicker:before{content:'';width:34px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+h2{font-size:clamp(36px,5.5vw,68px);font-weight:900;line-height:1.1;margin:14px 0 14px;letter-spacing:-1px}
+.sub{color:var(--muted);font-size:17px;max-width:640px;margin:0}
+.center{text-align:center}.center .sub{margin-inline:auto}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
 
-@media(min-width:901px){.hero{grid-template-columns:.95fr 1.2fr;padding-block:75px}.hero h1{font-size:clamp(48px,5vw,64px)}.hero-art{align-self:center}.hero-art img{width:100%;height:auto}}@media(max-width:650px){.hero-art img{width:100%;height:auto}.scene-caption{font-size:8px}.hero-art:after{background:linear-gradient(180deg,transparent 65%,#06080bbd)}} 
+/* big numbers */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-top:56px}
+.nums div{background:var(--ink);padding:34px 20px;text-align:center}
+.nums b{display:block;font:900 clamp(38px,5vw,62px)/1 Cinzel,serif;color:var(--gold2);text-shadow:0 0 30px #e2bd6e55}
+.nums span{display:block;margin-top:10px;color:var(--muted);font-size:14px}
 
-body{background:#090b0f;isolation:isolate}body:before{content:'';position:fixed;inset:0;z-index:-2;background:url('site-background.png') center center/cover no-repeat;pointer-events:none}body:after{content:'';position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#04070c70,#04070cb5 55%,#04070ccd);pointer-events:none}.hero-shell{background:linear-gradient(90deg,#090b0f10,#090b0f55)}header{background:#090b0fd9;backdrop-filter:blur(12px)}.hero-copy{background:#080c136e;backdrop-filter:blur(4px);padding:26px;border:1px solid #d8b46c1c;border-radius:8px}.statebar{background:#090d14b8;backdrop-filter:blur(10px);padding-inline:18px;border-radius:5px}.update-card{background:#10141ee8;backdrop-filter:blur(12px)}.current{background:linear-gradient(110deg,#191b20f2,#14161bf0)}.city-section{background:#080c1380}.about{background:#080c13b3;padding-inline:24px;border-radius:5px}.closing{background:#080c1399;border-radius:5px;padding-top:30px}footer{background:#080c13d9}.hero-note,.update-time,.records-note{color:#b2b7c1}.hero-copy p,.about p,.closing p{color:#c4c7ce}
+/* categories */
+.cats{display:flex;flex-direction:column;gap:70px;margin-top:70px}
+.cat-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:22px;border-bottom:1px solid var(--line);padding-bottom:18px}
+.cat-head h3{margin:0;font-size:clamp(26px,3vw,36px);font-weight:900;display:flex;align-items:center;gap:14px}
+.cat-head h3 em{font-style:normal;font-size:.9em;width:58px;height:58px;display:grid;place-items:center;border-radius:16px;background:linear-gradient(145deg,#e2bd6e26,#e2bd6e08);border:1px solid #e2bd6e40}
+.cat-head .n{font:900 14px Cinzel,serif;color:var(--gold);letter-spacing:2px;direction:ltr;white-space:nowrap}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.card{--mx:50%;--my:50%;position:relative;padding:22px 20px 20px;border-radius:18px;background:var(--card);border:1px solid var(--line);overflow:hidden;transform-style:preserve-3d;transition:transform .25s ease-out,border-color .25s;will-change:transform}
+.card:before{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(260px circle at var(--mx) var(--my),#e2bd6e26,transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{border-color:#e2bd6e66}
+.card:hover:before{opacity:1}
+.card .ico{font-size:34px;line-height:1;filter:drop-shadow(0 6px 14px #000)}
+.card h4{margin:16px 0 6px;font-size:19px;font-weight:800}
+.card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.8}
+.card .st{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:14px;border-top:1px dashed #ffffff14;font-size:12px}
+.ok{color:var(--green);display:inline-flex;align-items:center;gap:7px;font-weight:700}
+.ok:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+.soon{font:700 10px Cinzel,serif;letter-spacing:2px;color:var(--gold);direction:ltr}
 
-@media(max-width:650px){body:before{background-position:42% center}.hero-copy{padding:18px 16px}.hero h1{font-size:clamp(35px,10.4vw,47px)}.hero-copy p{font-size:14px}.hero-actions{gap:7px}.primary,.secondary{padding-inline:10px;font-size:12px}.statebar{padding-inline:8px}.about{padding-inline:18px}.hero{gap:20px}}
+/* cinematic gallery */
+.cine{display:grid;grid-template-columns:1.6fr 1fr;grid-auto-rows:280px;gap:16px;margin-top:56px}
+.shot{position:relative;margin:0;border-radius:22px;overflow:hidden;border:1px solid #e2bd6e2a;background:#0b0f16}
+.shot:first-child{grid-row:span 2}
+.shot img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.shot:hover img{transform:scale(1.15)}
+.shot figcaption{position:absolute;inset:auto 0 0;padding:60px 26px 24px;background:linear-gradient(180deg,transparent,#050608f0)}
+.shot small{display:block;font:700 10px Cinzel,serif;letter-spacing:4px;color:var(--gold);direction:ltr;text-align:right}
+.shot strong{font-size:24px;font-weight:900}
 
-.district-scene img{display:block;width:100%;height:100%;object-fit:cover;animation:sceneDrift 14s ease-in-out infinite}.district-scene{height:260px}@media(min-width:651px){.districts{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.district-scene{height:230px}} 
+/* roadmap */
+.road{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:60px}
+.road:before{content:'';position:absolute;top:27px;inset-inline:6%;height:2px;background:linear-gradient(270deg,var(--green) 0 62%,#e2bd6e55 62%)}
+.step{position:relative;text-align:center}
+.dot{width:56px;height:56px;margin:auto;border-radius:50%;display:grid;place-items:center;font-size:22px;font-weight:900;background:var(--ink);border:2px solid var(--green);color:var(--green);box-shadow:0 0 24px #6fe0a433;position:relative;z-index:1}
+.step.now .dot{border-color:var(--gold);color:var(--gold2);box-shadow:0 0 0 0 #e2bd6e88;animation:ping 2s infinite}
+.step.next .dot{border-color:#ffffff30;color:#ffffff60}
+@keyframes ping{70%{box-shadow:0 0 0 18px #e2bd6e00}100%{box-shadow:0 0 0 0 #e2bd6e00}}
+.step h4{margin:16px 0 4px;font-size:18px}
+.step p{margin:0;font-size:13px;color:var(--muted)}
 
-body:before{opacity:.12}body:after{background:linear-gradient(180deg,#090b0f45,#090b0f90)}.hero-shell{background:transparent}.hero-copy{background:#0b0e1480;backdrop-filter:none}.banner:after{display:none}.banner-stage{position:relative;aspect-ratio:16/11;overflow:hidden;background:#070b12;touch-action:pan-y}.banner-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;pointer-events:none;isolation:isolate}.banner-slide.active{opacity:1;z-index:1}.banner-slide:before{content:'';position:absolute;inset:-20px;background:var(--slide-image) center/cover;filter:blur(20px);opacity:.2;z-index:-1}.banner-slide img{display:block;width:100%;height:100%;object-fit:contain}.banner-info{position:static;display:flex;justify-content:space-between;gap:15px;padding:12px 16px 0;color:#e7d4b1;font-size:12px;background:#0c1017}.banner-info span:last-child{font:10px Arial;color:#8a909b;align-self:center}.banner-controls{display:flex;gap:5px;align-items:center;justify-content:center;background:#0c1017;padding:4px 10px 10px}.banner-controls>button{height:44px;min-width:38px;background:transparent;border:0;color:#d8b46c;font-size:16px;border-radius:4px}.banner-controls>button:hover{background:#d8b46c0c}.banner-dots{display:flex;gap:0;align-items:center}.banner-dot{width:29px;height:40px;padding:0;border:0;background:transparent;position:relative}.banner-dot:after{content:'';display:block;width:5px;height:5px;border-radius:50%;background:#6b727d;margin:auto;transition:width .25s,background .25s}.banner-dot[aria-pressed=true]:after{width:17px;border-radius:5px;background:var(--gold)}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:650px){body:before{opacity:.08}.banner-stage{aspect-ratio:16/12}.banner-info{font-size:11px;padding:10px 12px 0}.banner-controls{padding-bottom:5px}.banner-dot{width:27px}.banner-controls>button{min-width:36px}}
+/* CTA */
+.cta{position:relative;border-radius:32px;padding:3px;background:conic-gradient(from var(--a,0deg),var(--gold3),var(--gold2),#1877f2,var(--gold),var(--gold3));animation:rot 6s linear infinite}
+@property --a{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes rot{to{--a:360deg}}
+.cta-in{border-radius:30px;padding:80px 24px;text-align:center;background:radial-gradient(ellipse at top,#e2bd6e22,transparent 60%),radial-gradient(ellipse at bottom,#1877f222,transparent 60%),#07080b;overflow:hidden;position:relative}
+.cta-in img{width:86px;height:86px;border-radius:22px;object-fit:cover;box-shadow:0 0 50px #e2bd6e44}
+.cta .sub{margin:0 auto 34px}
+.cta .fb{min-height:60px;padding:16px 34px;font-size:18px}
+.cta .fb svg{width:22px;height:22px}
 
+footer{border-top:1px solid var(--line);padding:30px 0 34px;color:#7c828e;font-size:13px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.foot strong{font:900 14px Cinzel,serif;letter-spacing:3px;color:var(--gold)}
+.foot a:hover{color:var(--gold)}
 
+/* cursor glow */
+#glow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,#e2bd6e14,transparent 65%);transform:translate(-50%,-50%);left:-999px;top:-999px;transition:opacity .3s}
+main,footer{position:relative;z-index:1}
 
-.hero{width:100%;max-width:none;display:flex;flex-direction:column;gap:0;padding:0!important}.hero .banner{order:-1;width:100%;margin:0;border-radius:0;border-inline:0;box-shadow:none;align-self:stretch}.hero .hero-copy{width:min(850px,calc(100% - 80px));text-align:center;margin:38px auto 42px;padding:0;background:transparent;border:0;backdrop-filter:none}.hero-copy .overline{justify-content:center}.hero-copy p{max-width:620px;margin-inline:auto}.hero-actions{justify-content:center;flex-direction:row}.hero h1{font-size:clamp(43px,5vw,64px)}.banner-stage{aspect-ratio:auto;height:clamp(320px,45vw,640px)}.banner-info{justify-content:space-between;padding-inline:max(20px,calc((100% - 1200px)/2))}.banner-controls{padding-block:4px 8px}.banner-slide img{object-fit:contain}.hero-note{margin-top:18px}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media(hover:none){#glow{display:none}}
+@media(max-width:900px){
+ nav.top{display:none}
+ .nums{grid-template-columns:1fr 1fr}
+ .cine{grid-template-columns:1fr 1fr;grid-auto-rows:220px}.shot:first-child{grid-column:1/3;grid-row:auto}
+ .road{grid-template-columns:1fr 1fr;row-gap:36px}.road:before{display:none}
+}
+@media(max-width:560px){
+ .bar{height:64px}.brand{font-size:16px}.brand img{width:36px;height:36px}
+ .fb .lbl{display:none}.fb{padding:10px 12px}
+ .hero{padding:92px 0 76px}.hero-logo{width:92px;height:92px;border-radius:24px}
+ h1{letter-spacing:-1px}.cs{letter-spacing:.22em}.lead{font-size:16px}
+ .btn{flex:1;justify-content:center;padding-inline:16px;font-size:15px}
+ section.blk{padding:72px 0}.sub{font-size:15px}
+ .nums div{padding:24px 10px}.nums span{font-size:12px}
+ .cats{gap:50px;margin-top:46px}.cat-head h3 em{width:46px;height:46px;border-radius:12px}
+ .cards{grid-template-columns:1fr 1fr;gap:10px}.card{padding:16px 14px;border-radius:14px}.card .ico{font-size:26px}.card h4{font-size:15px;margin-top:12px}.card p{font-size:12px}.card .st{flex-direction:column;align-items:flex-start;gap:4px}
+ .cine{grid-template-columns:1fr;grid-auto-rows:230px}.shot:first-child{grid-column:auto}
+ .road{grid-template-columns:1fr}
+ .cta-in{padding:56px 18px}.cta .fb .lbl{display:inline}.cta .fb{font-size:16px;padding-inline:24px}
+}
+@media(max-width:340px){.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
 
-@media(max-width:650px){.banner-stage{height:auto;aspect-ratio:1.28}.hero .hero-copy{width:calc(100% - 36px);margin:27px auto 30px}.hero h1{font-size:clamp(35px,10.4vw,47px);margin-top:16px}.hero-copy p{font-size:14px}.hero-actions{margin-top:20px}.banner-info{padding-inline:15px}.hero .banner{border-top:0}.hero-note{margin-top:14px}}
+<div id="loader" aria-hidden="true"><div class="ld"><div class="ld-ring"><img src="logo.png" alt=""></div><p>جاري تجهيز المدينة…</p></div></div>
+<div id="glow" aria-hidden="true"></div>
 
-</style></head><body>
+<header id="hdr"><div class="wrap bar">
+ <a class="brand" href="#home"><img src="logo.png" alt="شعار مدينة الأوغاد" width="42" height="42"><div>مدينة الأوغاد<small>COMING SOON</small></div></a>
+ <nav class="top" aria-label="التنقل"><a href="#systems">الأنظمة</a><a href="#city">المدينة</a><a href="#road">خطة الإطلاق</a><a href="#follow">تابعنا</a></nav>
+ <a class="fb" href="https://web.facebook.com/profile.php?id=61595511271586" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg><span class="lbl">تابعنا</span></a>
+</div></header>
 
-<header><div class="wrap header-inner"><a class="brand" href="#home"><img src="logo.png" alt="شعار مدينة الأوغاد" width="42" height="42"><div>مدينة الأوغاد<small>WAKEER PROJECT</small></div></a><nav class="desktop-nav" aria-label="التنقل الرئيسي"><a href="#updates">سجل التطوير</a><a href="#city">عالم المدينة</a><a href="#story">عن المشروع</a></nav><div class="status"><span class="light"></span>قيد التطوير</div></div></header>
+<main>
+<section class="hero" id="home">
+ <div class="hero-bg" id="hbg" aria-hidden="true">
+  <img class="on" src="city-world.png" alt="" fetchpriority="high">
+  <img src="city-action.png" alt="" loading="lazy">
+  <img src="city-fight.png" alt="" loading="lazy">
+ </div>
+ <canvas id="embers" aria-hidden="true"></canvas>
+ <div class="giant" aria-hidden="true">WAKEER</div>
+ <div class="wrap">
+  <img class="hero-logo" src="logo.png" alt="شعار مدينة الأوغاد" width="120" height="120">
+  <div><span class="chip"><i></i>COMING SOON</span></div>
+  <h1><span class="shine">مدينة الأوغاد</span></h1>
+  <span class="cs" data-t="COMING SOON">COMING SOON</span>
+  <p class="lead">الوكر رجع… بس هالمرة مدينة كاملة. كل الأنظمة جاهزة، والأبواب رح تنفتح قريباً جداً.</p>
+  <div class="actions">
+   <a class="btn gold" href="#systems">اكتشف الأنظمة الجاهزة</a>
+   <a class="btn line" href="https://web.facebook.com/profile.php?id=61595511271586" target="_blank" rel="noopener">بلّغني بموعد الإطلاق</a>
+  </div>
+  <div class="ready" aria-label="جاهزية المدينة">
+   <div class="ready-top"><span>جاهزية المدينة</span><b id="pct">0%</b></div>
+   <div class="track"><div class="fill" id="fill"></div></div>
+   <small>الأنظمة خالصة · المرحلة الحالية: الاختبار النهائي قبل الإطلاق</small>
+  </div>
+ </div>
+ <a class="scroll-hint" href="#systems" aria-label="انزل للأسفل"></a>
+</section>
 
-<main><div class="hero-shell" id="home"><section class="wrap hero"><div class="hero-copy"><div class="overline">وكر الأوغاد. فصل جديد.</div><h1>مدينة الأوغاد.<span>العودة تُصنع الآن.</span></h1><p>نعيد تشغيل «وكر الأوغاد» بهوية «مدينة الأوغاد». تابع رحلة التطوير، من أول خطوة إلى جاهزية الإطلاق.</p><div class="hero-actions"><a class="primary" href="#updates">تابع آخر التطورات <span aria-hidden="true">↙</span></a><a class="secondary" href="#city">اكتشف المدينة</a></div><div class="hero-note">موعد الإطلاق يُعلن هنا عند الجاهزية.</div></div><figure class="hero-art banner" role="region" aria-roledescription="عرض شرائح" aria-label="صور مدينة الأوغاد"><div class="banner-stage" tabindex="0" aria-label="صور متحركة؛ استخدم الأسهم للتبديل"><div class="banner-slide active" aria-hidden="false" style="--slide-image:url(city-world.png)"><img src="city-world.png" alt="الشخصية وأبنية مدينة الأوغاد ليلًا" fetchpriority=high></div><div class="banner-slide" aria-hidden="true" style="--slide-image:url(city-action.png)"><img src="city-action.png" alt="مشهد مواجهة أمام أضواء المدينة" loading=lazy></div><div class="banner-slide" aria-hidden="true" style="--slide-image:url(city-fight.png)"><img src="city-fight.png" alt="قتال بين شخصيتين في شوارع المدينة" loading=lazy></div><div class="banner-slide" aria-hidden="true" style="--slide-image:url(logo.png)"><img src="logo.png" alt="شعار مدينة الأوغاد" loading=lazy></div></div><figcaption class="banner-info"><span id="banner-title">المدينة تنتظر العودة</span><span id="banner-count" dir="ltr">01 / 04</span></figcaption><div class="banner-controls"><button type="button" id="banner-prev" aria-label="الصورة السابقة">❯</button><div class="banner-dots"><button type="button" class="banner-dot" data-slide="0" aria-label="الصورة 1: المدينة تنتظر العودة" aria-pressed="true"></button><button type="button" class="banner-dot" data-slide="1" aria-label="الصورة 2: فصل جديد يبدأ" aria-pressed="false"></button><button type="button" class="banner-dot" data-slide="2" aria-label="الصورة 3: لحظة المواجهة" aria-pressed="false"></button><button type="button" class="banner-dot" data-slide="3" aria-label="الصورة 4: مدينة الأوغاد" aria-pressed="false"></button></div><button type="button" id="banner-next" aria-label="الصورة التالية">❮</button><button type="button" id="banner-pause" aria-pressed="false" aria-label="إيقاف تبديل الصور">Ⅱ</button></div><span id="banner-announcement" class="sr-only" role="status" aria-live="polite"></span></figure></section></div>
+<div class="marquee" aria-hidden="true"><div class="mq" id="mq"></div></div>
 
-<div class="wrap statebar"><div><small>حالة المشروع</small><strong class="gold">التطوير والاختبار</strong></div><div><small>العمل الحالي</small><strong>ناطحة السحاب</strong></div><div><small>آخر إنجاز معلن</small><strong>مركز التسوق</strong></div></div>
+<section class="blk wrap" id="systems">
+ <div class="center reveal">
+  <span class="kicker">كل شي جاهز</span>
+  <h2>المدينة <span class="shine">جاهزة</span> بالكامل</h2>
+  <p class="sub">هاي الأنظمة اللي خلصت وجاهزة جوّا اللعبة، ورح تكون كلها بين إيديك من أول يوم إطلاق.</p>
+ </div>
+ <div class="nums reveal">
+  <div><b data-count="39">0</b><span>نظام جاهز</span></div>
+  <div><b data-count="5">0</b><span>عوالم لعب</span></div>
+  <div><b data-count="100" data-suffix="%">0</b><span>عربي بالكامل</span></div>
+  <div><b>SOON</b><span>موعد الإطلاق</span></div>
+ </div>
+ <div class="cats" id="cats"></div>
+</section>
 
-<section class="wrap section" id="updates"><div class="section-header"><div><div class="overline">خطوات واضحة نحو العودة</div><h2>سجل التطوير</h2></div><div class="update-time">آخر تحديث · ٨ أكتوبر ٢٠٢٦</div></div><div class="current"><div><small>نعمل عليه الآن</small><h3>ناطحة السحاب</h3><p>العمل مستمر على الطوابق والقتال والجوائز والعلاج داخل الناطحة.</p></div><span class="work-label">جارٍ العمل</span></div>
+<section class="blk wrap" id="city">
+ <div class="reveal">
+  <span class="kicker">ملامح تعرفونها</span>
+  <h2>مدينة ما بتنام</h2>
+  <p class="sub">أبراج ذهبية، شوارع مولّعة، ومواجهات على كل زاوية. روح الوكر رجعت بشكل أقوى.</p>
+ </div>
+ <div class="cine">
+  <figure class="shot reveal"><img src="city-world.png" alt="أبنية مدينة الأوغاد ليلاً" loading="lazy"><figcaption><small>01 / THE CITY</small><strong>أضواء المدينة</strong></figcaption></figure>
+  <figure class="shot reveal"><img src="city-action.png" alt="مشهد مواجهة أمام أضواء المدينة" loading="lazy"><figcaption><small>02 / AFTER DARK</small><strong>نبض الليل</strong></figcaption></figure>
+  <figure class="shot reveal"><img src="city-fight.png" alt="قتال بين شخصيتين في الشارع" loading="lazy"><figcaption><small>03 / CONFRONTATION</small><strong>لحظة المواجهة</strong></figcaption></figure>
+ </div>
+</section>
 
-<div class="tabs" role="group" aria-label="تصفية التحديثات"><button type="button" data-filter="all" aria-pressed="true">جميع التحديثات <b>09</b></button><button type="button" data-filter="done" aria-pressed="false">تم الإنجاز <b>07</b></button><button type="button" data-filter="wip" aria-pressed="false">جارٍ العمل <b>02</b></button></div>
+<section class="blk wrap" id="road">
+ <div class="center reveal">
+  <span class="kicker">خطة الإطلاق</span>
+  <h2>العد التنازلي بلّش</h2>
+ </div>
+ <div class="road reveal">
+  <div class="step"><div class="dot">✓</div><h4>بناء الأنظمة</h4><p>39 نظام خالص وشغّال</p></div>
+  <div class="step"><div class="dot">✓</div><h4>تعريب كامل</h4><p>اللعبة كلها بالعربي</p></div>
+  <div class="step now"><div class="dot">◉</div><h4>الاختبار النهائي</h4><p>نشتغل عليه هلق</p></div>
+  <div class="step next"><div class="dot">🚀</div><h4>الإطلاق</h4><p>قريباً… تابعنا</p></div>
+ </div>
+</section>
 
-<div class="updates-grid">
+<section class="blk wrap" id="follow">
+ <div class="cta reveal"><div class="cta-in">
+  <img src="logo.png" alt="" width="86" height="86">
+  <h2>كون <span class="shine">أول</span> الواصلين</h2>
+  <p class="sub">موعد الإطلاق رح ينعلن أول بأول على صفحتنا. تابعنا هلق وخليك جاهز لما تنفتح البوابة.</p>
+  <a class="fb" href="https://web.facebook.com/profile.php?id=61595511271586" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg><span class="lbl">تابع صفحتنا على فيسبوك</span></a>
+ </div></div>
+</section>
+</main>
 
-<article class="update-card" data-status="done"><h3>منطق القتال</h3><span class="done-label">تم الإنجاز</span><p>من الأنظمة المكتملة المعلنة: القتال، بما يشمل الهجوم والأسلحة والدروع.</p></article>
-
-<article class="update-card" data-status="done"><h3>المناوشات</h3><span class="done-label">تم الإنجاز</span><p>نظام المناوشات ضمن الأعمال المكتملة المعلنة في رحلة إعادة تشغيل اللعبة.</p></article>
-
-<article class="update-card" data-status="done"><h3>العجلة</h3><span class="done-label">تم الإنجاز</span><p>العجلة ضمن الأنشطة المكتملة المعلنة، مع عرض الجوائز داخل تجربة اللعب.</p></article>
-
-<article class="update-card" data-status="done"><h3>مركز التسوق</h3><span class="done-label">تم الإنجاز</span><p>مركز التسوق ضمن الأنظمة المكتملة المعلنة لعرض منتجات اللعبة.</p></article>
-
-<article class="update-card" data-status="done"><h3>خطوات الدخول الأساسية</h3><span class="done-label">تم الإنجاز</span><p>تم التحقق من الدخول والوصول إلى المدينة ضمن المسار المختبَر.</p></article>
-
-<article class="update-card" data-status="done"><h3>الدردشة ورسائل النظام</h3><span class="done-label">تم الإنجاز</span><p>تم التحقق من عرض الرسائل واستقبالها وإرسالها في الاختبارات الموثقة.</p></article>
-
-<article class="update-card" data-status="done"><h3>متابعة الاتصال</h3><span class="done-label">تم الإنجاز</span><p>تم التحقق من متابعة الاتصال داخل اللعبة في المسار المختبَر.</p></article>
-
-<article class="update-card" data-status="wip"><h3>ناطحة السحاب</h3><span class="done-label ongoing">جارٍ العمل</span><p>تم تجهيز عرض صور الأعداء وحركة الحصول على الجوائز. يستمر العمل على قتال الطوابق وتدرّج قوة الأعداء، والكريستال في كل طابق، وصندوق كل خمسة طوابق، وجوائز البلاديوم من الطابق ٧٠ وكل ٢٠ طابقاً بعده، والعلاج بحسب الدم الناقص.</p></article>
-
-<article class="update-card" data-status="wip"><h3>استقرار تجربة اللعب</h3><span class="done-label ongoing">جارٍ العمل</span><p>تستمر مراجعة الأعطال واختبار الأنظمة معاً قبل إعلان جاهزية تجربة اللعب للجمهور.</p></article>
-
-</div><div class="records-note"><span>هذا سجل الأعمال المعلنة حتى الآن، وليس قائمة كاملة بكل ما أُنجز. «تم الإنجاز» تخص النظام المذكور؛ جاهزية اللعبة للإطلاق تُعلن بعد اكتمال التجهيز والاختبارات.</span><span id="filter-result" role="status" aria-live="polite"></span></div></section>
-
-<section class="city-section" id="city"><div class="wrap section"><div class="section-header"><div><div class="overline">ملامح تعرفونها</div><h2>مدينة لا تُنسى.</h2><p class="section-sub">أبراجها، أضواؤها، وتفاصيلها المألوفة. روح اللعبة حاضرة في كل زاوية.</p></div><button class="motion" type="button" id="motion-toggle" aria-pressed="false">إيقاف الحركة</button></div><p class="swipe-tip">اسحب لاستكشاف ملامح المدينة ↔</p><div class="districts">
-
-<figure class="district"><div class="district-scene"><svg viewBox="495 118 390 345" preserveAspectRatio="xMidYMid slice" role="img" aria-label="الأبراج الذهبية في المدينة"><image href="city-world.png" width="1312" height="1199"/></svg></div><figcaption><small>01 / GOLDEN LIGHTS</small><h3>أضواء المدينة</h3><p>الأبراج الذهبية تضيء مشهد العودة.</p></figcaption></figure>
-
-<figure class="district"><div class="district-scene"><svg viewBox="677 420 242 265" preserveAspectRatio="xMidYMid slice" role="img" aria-label="برج أزرق وسط شوارع المدينة"><image href="city-world.png" width="1312" height="1199"/></svg></div><figcaption><small>02 / AFTER DARK</small><h3>نبض الليل</h3><p>تفاصيل مألوفة، وهوية تستعيد حضورها.</p></figcaption></figure>
-
-<figure class="district"><div class="district-scene"><svg viewBox="1041 724 270 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="المبنى ذو القبة الخضراء في المدينة"><image href="city-world.png" width="1312" height="1199"/></svg></div><figcaption><small>03 / CITY LANDMARKS</small><h3>ذاكرة المكان</h3><p>لكل مبنى حكاية يعرفها أهل المدينة.</p></figcaption></figure>
-
-<figure class="district"><div class="district-scene"><img src="city-fight.png" alt="مشهد قتال بين شخصيتين في شوارع المدينة المضيئة" width="1536" height="1024" loading="lazy"></div><figcaption><small>04 / THE CONFRONTATION</small><h3>لحظة المواجهة</h3><p>مشهد تشويقي من أجواء مدينة الأوغاد.</p></figcaption></figure></div></div></section>
-
-<section class="wrap about" id="story"><div><div class="overline">عن المشروع</div><h2>نفس الحكاية.<br>اسم لفصل جديد.</h2></div><p>مشروع <strong>Wakeer</strong> لإعادة تشغيل لعبة <strong>وكر الأوغاد</strong> تحت اسم <strong>مدينة الأوغاد</strong>. هنا نشارك التقدم مع الجمهور المنتظر، بتحديثات موجزة عن الأعمال المكتملة وما يجري تطويره.</p></section>
-
-<section class="wrap closing"><div class="overline">للجمهور المنتظر</div><h2>المدينة تنتظر أهلها.</h2><p>تابع هذه الصفحة للمستجدات وإعلان موعد الإطلاق.<br>كل خطوة مكتملة تقرّبنا من العودة.</p></section></main>
-
-<footer><div class="wrap footer-inner"><strong>مدينة الأوغاد · WAKEER</strong><span>سجل التطوير / ٢٠٢٦</span><a href="#home">العودة إلى الأعلى ↑</a></div></footer>
-
-<nav class="mobile-nav" aria-label="التنقل على الهاتف"><a href="#home" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10l9-7 9 7v11h-6v-7H9v7H3z"/></svg>الرئيسية</a><a href="#updates"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h14v18H3V7M7 3v4H3M7 11h10M7 15h10"/></svg>التحديثات</a><a href="#city"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V9h6V3h6v10h6v8M1 21h22M6 12v2m6-8v2m0 3v2m6 3v2"/></svg>المدينة</a></nav>
+<footer><div class="wrap foot">
+ <strong>WAKEER · COMING SOON</strong>
+ <span>© 2026 مدينة الأوغاد · sbsforge.org</span>
+ <a href="https://web.facebook.com/profile.php?id=61595511271586" target="_blank" rel="noopener">فيسبوك ↗</a>
+</div></footer>
 
 <script>
+const CATS=[
+ ['⚔️','القتال والتحدي',[
+  ['⚔️','منطق القتال','الهجوم والأسلحة والدروع ونتائج المعارك.'],
+  ['🥊','المناوشات','تحدّى لاعبين آخرين بمواجهات سريعة.'],
+  ['🏙️','ناطحة السحاب','طوابق وأعداء تتصاعد قوتهم وجوائز كل مرحلة.'],
+  ['🔥','حرب الشوارع','سيطر على شوارع المدينة مع جماعتك.'],
+  ['👑','قتال الملك','نافس على عرش المدينة.'],
+  ['🐉','زعيم العالم','زعيم ضخم يواجهه كل سكان المدينة.'],
+  ['🤝','الزعيم التعاوني','قاتل الزعيم مع أصحابك واقتسموا الجوائز.'],
+  ['💀','زعيم العصابة','واجه زعماء العصابات وخذ غنائمهم.'],
+  ['📜','سجل القتال','تفاصيل كل ضربة بعد المعركة.']]],
+ ['💰','الاقتصاد والتجارة',[
+  ['🛍️','مركز التسوق','كل منتجات اللعبة بمكان واحد.'],
+  ['⚖️','السوق والمزاد','بيع واشترِ مع اللاعبين.'],
+  ['🕶️','السوق السوداء','بضائع نادرة لمن يعرف الطريق.'],
+  ['🏦','البنك','احفظ أموالك بأمان.'],
+  ['🏠','العقارات','امتلك، طوّر، صُن، وتاجر.'],
+  ['⛏️','المناجم','استخرج الموارد واجمع الأرباح.']]],
+ ['💪','تطوير الشخصية',[
+  ['🏋️','النادي الرياضي','درّب شخصيتك وارفع قوتها.'],
+  ['🎓','المدرسة','تعلّم مهارات جديدة.'],
+  ['🏥','المستشفى والأدوية','عالج حالك وارجع للمعركة.'],
+  ['🌿','الأعشاب','ازرع واجمع الأعشاب المفيدة.'],
+  ['🛡️','الحراس الشخصيون','وظّف حراس يحموك.'],
+  ['🪖','المرتزقة','طوّر مرتزقتك ليقاتلوا معك.'],
+  ['⚡','مولّد القوة','عزّز قوة شخصيتك.'],
+  ['📋','المهام اليومية','مهام يومية بجوائز مستمرة.']]],
+ ['🏴','الحياة الاجتماعية',[
+  ['💬','الدردشة','تواصل مع كل سكان المدينة.'],
+  ['✉️','الرسائل','رسائل خاصة ورسائل النظام.'],
+  ['🏴','العصابات والفصائل','انضم لفصيل أو أسّس عصابتك.'],
+  ['💍','الزواج','ارتبط بشريك جوّا المدينة.'],
+  ['🧑‍🏫','التلمذة','علّم الجداد أو تعلّم من الكبار.'],
+  ['🧧','الظرف الأحمر','وزّع الهدايا على أصحابك.'],
+  ['💎','كبار الشخصيات VIP','امتيازات خاصة لكبار المدينة.']]],
+ ['🎡','الأنشطة والفعاليات',[
+  ['🎡','العجلة','لف العجلة واربح جوائز.'],
+  ['🏎️','السباق','سباقات بين اللاعبين.'],
+  ['🎯','الصيد','اصطد واجمع الغنائم.'],
+  ['🗝️','المخبأ','مهام المخبأ وصناديق الكنوز.'],
+  ['🏛️','المركز الحكومي','خدمات ومهام المدينة الرسمية.'],
+  ['⛓️','السجن','لكل فعل عواقب بالمدينة.'],
+  ['🏆','الترتيب الدوري','تنافس على صدارة المدينة.'],
+  ['🎉','الفعاليات الموسمية','أحداث خاصة بجوائز محدودة.'],
+  ['🪪','البطاقة الشهرية','مكافآت يومية طول الشهر.']]]
+];
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const filters=document.querySelectorAll('[data-filter]');filters.forEach(button=>button.addEventListener('click',()=>{filters.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));let count=0;document.querySelectorAll('[data-status]').forEach(card=>{card.hidden=button.dataset.filter!=='all'&&card.dataset.status!==button.dataset.filter;if(!card.hidden)count++});document.getElementById('filter-result').textContent='عرض '+count+' تحديثات'}));
+document.getElementById('cats').innerHTML=CATS.map(([ic,name,items])=>`
+<div class="cat"><div class="cat-head reveal"><h3><em aria-hidden="true">${ic}</em>${esc(name)}</h3><span class="n">${String(items.length).padStart(2,'0')} READY</span></div>
+<div class="cards">${items.map(([i,t,d],k)=>`<article class="card reveal" style="transition-delay:${(k%4)*70}ms"><div class="ico" aria-hidden="true">${i}</div><h4>${esc(t)}</h4><p>${esc(d)}</p><div class="st"><span class="ok">جاهز</span><span class="soon">COMING SOON</span></div></article>`).join('')}</div></div>`).join('');
 
-const motion=document.getElementById('motion-toggle'),reduced=matchMedia('(prefers-reduced-motion: reduce)');function motionLabel(){motion.disabled=reduced.matches;motion.textContent=reduced.matches?'الحركة مخففة حسب جهازك':document.body.classList.contains('motion-paused')?'تشغيل الحركة':'إيقاف الحركة'}motionLabel();reduced.addEventListener('change',motionLabel);motion.addEventListener('click',()=>{motion.setAttribute('aria-pressed',String(document.body.classList.toggle('motion-paused')));motionLabel()});
+const names=CATS.flatMap(c=>c[2].map(x=>x[1]));
+document.getElementById('mq').innerHTML=[...names,...names].map(n=>`<span>${esc(n)}</span>`).join('');
 
-const mobileLinks=document.querySelectorAll('.mobile-nav a');function markNav(id){mobileLinks.forEach(a=>{if(a.getAttribute('href')===id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')})}mobileLinks.forEach(a=>a.addEventListener('click',()=>markNav(a.getAttribute('href'))));if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)markNav('#'+e.target.id)})},{rootMargin:'-15% 0px -60% 0px'});['home','updates','city'].forEach(id=>observer.observe(document.getElementById(id)))}
+/* loader */
+const hideLoader=()=>document.getElementById('loader').classList.add('out');
+addEventListener('load',()=>setTimeout(hideLoader,500));setTimeout(hideLoader,2500);
 
+/* header */
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('solid',scrollY>40),{passive:true});
 
+/* readiness bar */
+setTimeout(()=>{document.getElementById('fill').style.width='97%';let p=0;const pe=document.getElementById('pct');const t=setInterval(()=>{p++;pe.textContent=p+'%';if(p>=97)clearInterval(t)},reduce?0:24)},900);
 
-const slideTitles=['المدينة تنتظر العودة','فصل جديد يبدأ','لحظة المواجهة','مدينة الأوغاد'];
+/* reveal + counters */
+const counted=new WeakSet();
+function countUp(el){if(counted.has(el))return;counted.add(el);const to=+el.dataset.count,suf=el.dataset.suffix||'';if(reduce){el.textContent=to+suf;return}const t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/1600),e=1-Math.pow(1-k,3);el.textContent=Math.round(to*e)+suf;if(k<1)requestAnimationFrame(f)})(t0)}
+if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(countUp);io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}else document.querySelectorAll('.reveal').forEach(el=>{el.classList.add('in');el.querySelectorAll('[data-count]').forEach(countUp)});
 
-const banner=document.querySelector('.banner'),stage=document.querySelector('.banner-stage'),slides=[...document.querySelectorAll('.banner-slide')],dots=[...document.querySelectorAll('.banner-dot')],pause=document.getElementById('banner-pause');
+/* hero slideshow + parallax */
+const bg=[...document.querySelectorAll('#hbg img')];let bi=0;
+if(!reduce)setInterval(()=>{bg[bi].classList.remove('on');bi=(bi+1)%bg.length;bg[bi].classList.add('on')},7000);
+const hbg=document.getElementById('hbg'),glow=document.getElementById('glow');
+if(!reduce&&matchMedia('(hover:hover)').matches){
+ addEventListener('pointermove',e=>{const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;hbg.style.transform=`translate(${x*-24}px,${y*-24}px)`;glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'},{passive:true});
+ document.querySelectorAll('.card').forEach(c=>{
+  c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%');c.style.transform=`perspective(700px) rotateX(${(.5-y)*10}deg) rotateY(${(x-.5)*12}deg) translateY(-4px)`});
+  c.addEventListener('pointerleave',()=>c.style.transform='')});
+}
 
-let slideIndex=0,bannerPaused=false,timer=null,inView=true;
-
-function showSlide(index,manual=false){slideIndex=(index+slides.length)%slides.length;slides.forEach((el,i)=>{el.classList.toggle('active',i===slideIndex);el.setAttribute('aria-hidden',String(i!==slideIndex))});dots.forEach((el,i)=>el.setAttribute('aria-pressed',String(i===slideIndex)));document.getElementById('banner-title').textContent=slideTitles[slideIndex];document.getElementById('banner-count').textContent=String(slideIndex+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');if(manual){document.getElementById('banner-announcement').textContent=slideTitles[slideIndex];scheduleSlides()}}
-
-function scheduleSlides(){clearInterval(timer);timer=null;if(!bannerPaused&&!reduced.matches&&!document.hidden&&inView&&!document.body.classList.contains('motion-paused'))timer=setInterval(()=>showSlide(slideIndex+1),6000)}
-
-function pauseLabel(){pause.textContent=bannerPaused?'▶':'Ⅱ';pause.setAttribute('aria-pressed',String(bannerPaused));pause.setAttribute('aria-label',bannerPaused?'تشغيل تبديل الصور':'إيقاف تبديل الصور')}
-
-pause.addEventListener('click',()=>{bannerPaused=!bannerPaused;pauseLabel();scheduleSlides()});document.getElementById('banner-next').addEventListener('click',()=>showSlide(slideIndex+1,true));document.getElementById('banner-prev').addEventListener('click',()=>showSlide(slideIndex-1,true));dots.forEach((dot,i)=>dot.addEventListener('click',()=>showSlide(i,true)));
-
-stage.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();showSlide(slideIndex+(e.key==='ArrowLeft'?1:-1),true)}});
-
-let touchStart=null;stage.addEventListener('pointerdown',e=>{if(e.pointerType==='touch')touchStart={x:e.clientX,y:e.clientY}});stage.addEventListener('pointerup',e=>{if(!touchStart)return;const dx=e.clientX-touchStart.x,dy=e.clientY-touchStart.y;touchStart=null;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.2)showSlide(slideIndex+(dx<0?1:-1),true)});stage.addEventListener('pointercancel',()=>touchStart=null);
-
-document.addEventListener('visibilitychange',scheduleSlides);reduced.addEventListener('change',scheduleSlides);motion.addEventListener('click',scheduleSlides);if('IntersectionObserver' in window){new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;scheduleSlides()},{threshold:.15}).observe(banner)}scheduleSlides();
-
-</script></body>
+/* embers */
+(()=>{if(reduce)return;const cv=document.getElementById('embers'),ctx=cv.getContext('2d');let W,H,P=[],run=true;const dpr=Math.min(devicePixelRatio||1,2);
+ function size(){W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+ function mk(init){return{x:Math.random()*W,y:init?Math.random()*H:H+10,r:Math.random()*2.2+.4,vy:Math.random()*.7+.25,vx:(Math.random()-.5)*.35,a:Math.random()*.6+.3,w:Math.random()*Math.PI*2}}
+ size();const N=innerWidth<600?45:90;for(let i=0;i<N;i++)P.push(mk(true));addEventListener('resize',size);
+ new IntersectionObserver(e=>{run=e[0].isIntersecting;if(run)requestAnimationFrame(draw)}).observe(cv);
+ function draw(){if(!run||document.hidden){if(run)requestAnimationFrame(draw);return}ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';
+  for(const p of P){p.y-=p.vy;p.w+=.02;p.x+=p.vx+Math.sin(p.w)*.3;if(p.y<-10)Object.assign(p,mk(false));const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4);g.addColorStop(0,`rgba(255,215,140,${p.a})`);g.addColorStop(1,'rgba(226,140,60,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(p.x,p.y,p.r*4,0,7);ctx.fill()}
+  requestAnimationFrame(draw)}
+ requestAnimationFrame(draw)})();
+</script>
+</body>
 </html>
-
