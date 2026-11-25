@@ -1,2 +1,3 @@
 # Netlify cuts long downloads (~90s); serve the APK from GitHub raw instead.
 /download/madinat-alawghad-test.apk  https://raw.githubusercontent.com/amlolo618-ops/Step/main/download/madinat-alawghad-test.apk  302!
+/download/madinat-alawghad-test-64.apk  https://github.com/amlolo618-ops/Step/releases/download/v1.1.40-64/madinat-alawghad-test-64.apk  302!
